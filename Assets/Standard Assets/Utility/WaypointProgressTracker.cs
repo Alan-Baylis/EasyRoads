@@ -31,6 +31,8 @@ namespace UnityStandardAssets.Utility
         [SerializeField] private float pointToPointThreshold = 4;
         // proximity to waypoint which must be reached to switch target to next waypoint : only used in PointToPoint mode.
 
+
+       
         public enum ProgressStyle
         {
             SmoothAlongRoute,
@@ -41,6 +43,7 @@ namespace UnityStandardAssets.Utility
         public WaypointCircuit.RoutePoint targetPoint { get; private set; }
         public WaypointCircuit.RoutePoint speedPoint { get; private set; }
         public WaypointCircuit.RoutePoint progressPoint { get; private set; }
+        public Vector3 WayPointPosition { get; private set; }
 
         public Transform target;
 
@@ -82,6 +85,7 @@ namespace UnityStandardAssets.Utility
 
         private void Update()
         {
+            WayPointPosition = circuit.GetRoutePosition(progressDistance);
             if (progressStyle == ProgressStyle.SmoothAlongRoute)
             {
                 // determine the position we should currently be aiming for
