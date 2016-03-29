@@ -47,7 +47,7 @@ namespace UnityStandardAssets.Utility
         }
 
 
-        public RoutePoint GetRoutePoint(float dist)
+        public RoutePoint   GetRoutePoint(float dist)
         {
             // position and direction
             Vector3 p1 = GetRoutePosition(dist);

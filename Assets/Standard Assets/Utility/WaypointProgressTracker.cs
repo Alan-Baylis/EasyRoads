@@ -30,8 +30,14 @@ namespace UnityStandardAssets.Utility
 
         [SerializeField] private float pointToPointThreshold = 4;
         // proximity to waypoint which must be reached to switch target to next waypoint : only used in PointToPoint mode.
-
-
+        
+        //[SerializeField]
+        //private Color LineColor { get; set; }
+        ////public enum LineColor
+        ////{
+        ////    SmoothAlongRoute,
+        ////    PointToPoint,
+        ////}
        
         public enum ProgressStyle
         {
@@ -44,6 +50,7 @@ namespace UnityStandardAssets.Utility
         public WaypointCircuit.RoutePoint speedPoint { get; private set; }
         public WaypointCircuit.RoutePoint progressPoint { get; private set; }
         public Vector3 WayPointPosition { get; private set; }
+        public Quaternion WayPointDirection { get; private set; }
 
         public Transform target;
 
@@ -86,6 +93,7 @@ namespace UnityStandardAssets.Utility
         private void Update()
         {
             WayPointPosition = circuit.GetRoutePosition(progressDistance);
+           
             if (progressStyle == ProgressStyle.SmoothAlongRoute)
             {
                 // determine the position we should currently be aiming for
@@ -99,7 +107,7 @@ namespace UnityStandardAssets.Utility
                 target.position =
                     circuit.GetRoutePoint(progressDistance + lookAheadForTargetOffset + lookAheadForTargetFactor*speed)
                            .position;
-                target.rotation =
+                WayPointDirection = target.rotation =
                     Quaternion.LookRotation(
                         circuit.GetRoutePoint(progressDistance + lookAheadForSpeedOffset + lookAheadForSpeedFactor*speed)
                                .direction);
@@ -112,6 +120,9 @@ namespace UnityStandardAssets.Utility
                 {
                     progressDistance += progressDelta.magnitude*0.5f;
                 }
+                Debug.Log(string.Format("progressDistance = {0}", progressDistance));
+
+
 
                 lastPosition = transform.position;
             }

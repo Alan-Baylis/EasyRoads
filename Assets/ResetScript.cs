@@ -36,6 +36,7 @@ public class ResetScript : MonoBehaviour {
                 {
                     Debug.Log("Ok");
                     this.transform.position = new Vector3(tracker.WayPointPosition.x, tracker.WayPointPosition.y, tracker.WayPointPosition.z);
+                    this.transform.rotation = new Quaternion(tracker.WayPointDirection.x, tracker.WayPointDirection.y, tracker.WayPointDirection.z, tracker.WayPointDirection.w);
                     flag = false;
                 }
                     
