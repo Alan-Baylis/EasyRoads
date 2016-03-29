@@ -1,7 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class FinishTrigger : MonoBehaviour {
+
+    public int LapsCount;
+    public GameObject[] cars { get; set; }
 
     byte lapsCounterBlue = 0;
 	byte lapsCounterRed = 0;
@@ -17,6 +22,18 @@ public class FinishTrigger : MonoBehaviour {
 	float redTime;
 	float blueTime;
 
+    class Lap{
+        int number { get; set; }
+        public Time Time{get;set;}
+    }
+
+    class CarLaps
+    {
+        public List<Lap> Laps { get; set; }
+        public GameObject car { get; set; }
+    }
+
+
 	void Start()
 	{
 		AudioListener.pause = false;
@@ -28,6 +45,8 @@ public class FinishTrigger : MonoBehaviour {
 
     void OnTriggerEnter(Collider crossCollider)
     {
+        var triggerCar = cars.First(c => c.gameObject == crossCollider.gameObject);
+
         if (crossCollider.gameObject.tag == "Red")
         {
 			Debug.Log("Red Crossed");
@@ -47,7 +66,7 @@ public class FinishTrigger : MonoBehaviour {
 			Debug.Log("Blue Crossed");
 			lapsCounterBlue++;
 			if (lapsCounterBlue == 2)
-			{
+			{   
 				blueTime = raceTime;
 				timerBlue.text = blueTime.ToString ("F4");
 				if (lapsCounterRed > 1) 
