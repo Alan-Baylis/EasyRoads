@@ -363,5 +363,11 @@ namespace UnityStandardAssets.Vehicles.Car
             }
             return false;
         }
+
+        public void Stop()
+        {
+            this.m_FullTorqueOverAllWheels = 0;
+            this.m_MaximumSteerAngle = 0;
+        }
     }
 }

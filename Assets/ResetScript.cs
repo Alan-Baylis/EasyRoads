@@ -10,9 +10,13 @@ public class ResetScript : MonoBehaviour {
     WaypointProgressTracker tracker;
     DateTime time;
     bool flag;
+
+    public bool Stoped { get; private set; }
 	// Use this for initialization
 
+
 	void Start () {
+        Stoped = false;
         controller = (CarController)this.GetComponent(typeof(CarController));
         tracker = (WaypointProgressTracker)this.GetComponent(typeof(WaypointProgressTracker));
 	}
@@ -20,7 +24,8 @@ public class ResetScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
       //  Debug.Log(controller.CurrentSpeed);
-        Debug.Log(string.Format("{0},{1},{2}", tracker.WayPointPosition.x, tracker.WayPointPosition.y, tracker.WayPointPosition.z));
+     //   Debug.Log(string.Format("{0},{1},{2}", tracker.WayPointPosition.x, tracker.WayPointPosition.y, tracker.WayPointPosition.z));
+        if (Stoped) return;
         if (controller.CurrentSpeed < 1)
         {
          //   Debug.Log(flag.ToString());
@@ -47,4 +52,11 @@ public class ResetScript : MonoBehaviour {
             flag = false;
         }
 	}
+
+    public void Stop()
+    {
+        this.Stoped = true;
+        controller.Stop();
+    }
+
 }
