@@ -5,6 +5,7 @@ public class FinishTrigger : MonoBehaviour {
 
     byte lapsCounterBlue = 0;
 	byte lapsCounterRed = 0;
+	public byte laps;
     public string Tag;
 	public GUIText gameOverText;
 	public GUITexture gameOverTexture;
@@ -32,11 +33,11 @@ public class FinishTrigger : MonoBehaviour {
         {
 			Debug.Log("Red Crossed");
 			lapsCounterRed++;
-			if (lapsCounterRed == 2)
+			if (lapsCounterRed == laps)
 			{
 				redTime = raceTime;
 				timerRed.text = redTime.ToString ("F4");
-				if (lapsCounterBlue > 1) 
+				if (lapsCounterBlue > laps-1) 
 				{
 					GameOver ();
 				}
@@ -46,11 +47,11 @@ public class FinishTrigger : MonoBehaviour {
 		{
 			Debug.Log("Blue Crossed");
 			lapsCounterBlue++;
-			if (lapsCounterBlue == 2)
+			if (lapsCounterBlue == laps)
 			{
 				blueTime = raceTime;
 				timerBlue.text = blueTime.ToString ("F4");
-				if (lapsCounterRed > 1) 
+				if (lapsCounterRed > laps-1) 
 				{
 					GameOver ();
 				}
