@@ -43,8 +43,8 @@ public class GuiInfo : MonoBehaviour {
             progress =((CriterianProgress)c.GetComponent("CriterianProgress")).progressDistance 
         })
         .OrderByDescending(c => c.progress);
-        
-        string str = string.Join("\n",ordered.Select((c,index) =>string.Format("<color='#{3}'>{0}. \t {1} - прогресс {2,5:N1}</color>", index.ToString(), c.name, c.progress, colorToHex(c.color))).ToArray());
+
+        string str = string.Join("\n", ordered.Select((c, index) => string.Format("{0}. \t<color='#{3}'> ▀▄▀▄▀ </color>{1} ", index.ToString(), c.name, c.progress, colorToHex(c.color))).ToArray());
         var currentStyle = new GUIStyle(GUI.skin.box);
         currentStyle.alignment = TextAnchor.UpperLeft;
         currentStyle.richText = true;
