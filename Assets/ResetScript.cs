@@ -34,7 +34,7 @@ public class ResetScript : MonoBehaviour {
                // Debug.Log(DateTime.Now.Subtract(time).TotalMilliseconds);
                 if (DateTime.Now.Subtract(time).TotalMilliseconds > 1000)
                 {
-                    Debug.Log("Ok");
+                    //Debug.Log("Ok");
                     this.transform.position = new Vector3(tracker.WayPointPosition.x, tracker.WayPointPosition.y, tracker.WayPointPosition.z);
                     this.transform.rotation = new Quaternion(tracker.WayPointDirection.x, tracker.WayPointDirection.y, tracker.WayPointDirection.z, tracker.WayPointDirection.w);
                     flag = false;
