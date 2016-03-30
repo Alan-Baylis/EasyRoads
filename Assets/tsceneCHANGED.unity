@@ -726,7 +726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &225594455
 AudioListener:
   m_ObjectHideFlags: 0
@@ -793,7 +793,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1896681619}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!114 &225594460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1811,7 +1811,7 @@ GameObject:
   - 81: {fileID: 421733425}
   - 114: {fileID: 421733430}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Camera Special
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1850,13 +1850,13 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.8
-    y: 0.6
+    x: 0
+    y: 0
     width: 0.2
-    height: 0.4
+    height: 0.5
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 96
+  field of view: 112.8
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -1883,7 +1883,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1896681619}
-  m_RootOrder: 3
+  m_RootOrder: 0
 --- !u!114 &421733430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5545,13 +5545,13 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.8
     y: 0
     width: 0.2
-    height: 0.4
+    height: 0.5
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 76.2
+  field of view: 101.6
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -5573,12 +5573,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 839882853}
-  m_LocalRotation: {x: 0.07291637, y: -0.8540645, z: 0.124618486, w: 0.49972734}
-  m_LocalPosition: {x: 29.4, y: 20, z: 52.200012}
+  m_LocalRotation: {x: 0.15615772, y: -0.83273274, z: 0.29386377, w: 0.44251007}
+  m_LocalPosition: {x: 9.5, y: 40, z: 37.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1896681619}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!1 &851909009
 GameObject:
   m_ObjectHideFlags: 0
@@ -6448,9 +6448,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0.2
-    y: 0.15
+    y: 0
     width: 0.6
-    height: 0.7
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -9131,7 +9131,7 @@ GameObject:
   - 92: {fileID: 1570021283}
   - 81: {fileID: 1570021282}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Camera Springboard
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9171,12 +9171,12 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0.8
-    y: 0
+    y: 0.5
     width: 0.2
-    height: 0.4
+    height: 0.5
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 89.5
+  field of view: 124.4
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -9198,12 +9198,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1570021281}
-  m_LocalRotation: {x: 0.3089851, y: -0.082118526, z: 0.069364294, w: 0.9449727}
-  m_LocalPosition: {x: -74.9, y: 27.6, z: -135.1}
-  m_LocalScale: {x: 1.9564325, y: 1.9564325, z: 1.9564326}
+  m_LocalRotation: {x: 0.43214217, y: -0.108769126, z: 0.09796948, w: 0.8898452}
+  m_LocalPosition: {x: -90.3, y: 39.99997, z: -121.9}
+  m_LocalScale: {x: 1.9564327, y: 1.9564323, z: 1.9564326}
   m_Children: []
   m_Father: {fileID: 1896681619}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &1571075760
 GameObject:
   m_ObjectHideFlags: 0
@@ -12352,10 +12352,10 @@ Transform:
   m_LocalPosition: {x: -17.646198, y: -3.8855438, z: -398.74316}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 421733429}
+  - {fileID: 1570021286}
   - {fileID: 839882858}
   - {fileID: 225594459}
-  - {fileID: 1570021286}
-  - {fileID: 421733429}
   - {fileID: 1087126011}
   m_Father: {fileID: 0}
   m_RootOrder: 20
