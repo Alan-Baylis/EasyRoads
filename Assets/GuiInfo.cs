@@ -52,6 +52,9 @@ public class GuiInfo : MonoBehaviour {
         return hex;
     }
 
+
+
+    int x = 0, y = 0;
     void OnGUI()
     {
         //var ordered = carWrappers.OrderByDescending(c=>c.Finish).OrderBy(c=>c.Time).OrderByDescending(c => c.progress);
@@ -63,7 +66,7 @@ public class GuiInfo : MonoBehaviour {
         currentStyle.alignment = TextAnchor.UpperLeft;
         currentStyle.richText = true;
         GUI.Box(
-            new Rect(0, 0, 270, 100), string.Format("Позиция: \n {0}", str)
+            new Rect(x, y, 270, 100), string.Format("Позиция: \n {0}", str)
             ,currentStyle
             //   ,new GUIStyle() { alignment = TextAnchor.UpperLeft, border = new RectOffset(1, 1, 1, 1)}
             );
@@ -86,7 +89,7 @@ public class GuiInfo : MonoBehaviour {
         }
         if (this.carWrappers.All(c => c.Finish))
         {
-
+           
         }
     }
 }

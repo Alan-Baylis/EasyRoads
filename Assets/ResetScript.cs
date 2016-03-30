@@ -18,7 +18,7 @@ public class ResetScript : MonoBehaviour {
 	void Start () {
         Stoped = false;
         controller = (CarController)this.GetComponent(typeof(CarController));
-        tracker = (WaypointProgressTracker)this.GetComponent(typeof(WaypointProgressTracker));
+        tracker = (CriterianProgress)this.GetComponent(typeof(CriterianProgress));
 	}
 	
 	// Update is called once per frame
@@ -37,7 +37,7 @@ public class ResetScript : MonoBehaviour {
             else
             {
                // Debug.Log(DateTime.Now.Subtract(time).TotalMilliseconds);
-                if (DateTime.Now.Subtract(time).TotalMilliseconds > 1000)
+                if (DateTime.Now.Subtract(time).TotalMilliseconds > 2000)
                 {
                     
                     this.transform.position = new Vector3(tracker.WayPointPosition.x, tracker.WayPointPosition.y, tracker.WayPointPosition.z);
